@@ -13,8 +13,13 @@ for i in incomes_list:
     SUMS.append(i['summ'])
 
 plt.plot(DATES, SUMS)
+plt.savefig('./outputs/incomes_plot.png')
 plt.show()
+
 plt.scatter(DATES, SUMS)
+plt.savefig('./outputs/incomes_scatter.png')
 plt.show()
+
 plt.gcf().autofmt_xdate()
+plt.savefig('./outputs/incomes_gcf.png')
 plt.show()
