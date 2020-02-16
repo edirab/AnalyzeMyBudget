@@ -60,7 +60,7 @@ def incomes():
         one_tr['summ'] = summ
         one_tr['cat'] = cat
 
-        print(name, date_to_plot, summ, cat)
+        # print(name, date_to_plot, summ, cat)
         my_incomes.append(one_tr)
 
         '''
