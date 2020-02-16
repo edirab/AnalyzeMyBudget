@@ -60,8 +60,19 @@ def incomes():
         one_tr['summ'] = summ
         one_tr['cat'] = cat
 
-        # print(name, date_to_plot, summ, cat)
+        print(name, date_to_plot, summ, cat)
         my_incomes.append(one_tr)
 
+        '''
+        SBOL перевод 5469****3493 А. ЕВГЕНИЙ ВИКТОРОВИЧ 2019-03-08 00:00:00 5600.0 Прочие поступления
+        Зачисление стипендии 2019-03-05 00:00:00 3900.0 Прочие поступления
+        
+        {'name': 'Расчет при увольнении', 
+         'date_hr': '5 февраля 2020 14:37:38', 
+         'date_iso': '05.02.2020', 
+         'date_to_plot': datetime.datetime(2020, 2, 5, 0, 0), 
+         'summ': 4266.76, 'cat': 'Прочие поступления'
+         }
+        '''
     return my_incomes
 
