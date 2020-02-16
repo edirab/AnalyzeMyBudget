@@ -50,19 +50,46 @@ SBOL перевод
 '''
 
 
-def count_scholarship(incomes_list):
+def get_names(incomes_list):
+    names = set()
+    for i in incomes_list:
+        if i['name'] not in names:
+            names.add(i['name'])
+    return names
+
+
+def count_categories(incomes_list):
     scholarship = 0
     salary = 0
+    from_others = 0
     vacation = 0
 
+    rest = 0
+
     for i in incomes_list:
-        if i['name'] == 'Зачисление стипендии':
+        str_name = i['name']
+        if str_name == 'Зачисление стипендии':
             scholarship += i['summ']
 
-        if i['name'] == 'Зачисление зарплаты':
+        elif str_name == 'Зачисление зарплаты' or str_name == 'Командировочные' or str_name == 'Расчет при увольнении':
             salary += i['summ']
 
-        if i['name'] == 'Зачисление зарплаты':
-            salary += i['summ']
+        elif 'SBOL перевод' in str_name or 'TINKOFF' in str_name:
+            from_others += i['summ']
 
-    print(scholarship)
+        elif str_name == 'Отпускные':
+            vacation += i['summ']
+
+        else:
+            rest += i['summ']
+
+    # print(scholarship, salary, from_others, vacation, rest)
+    cats_dict = dict()
+    cats_dict['Стипендия'] = int(scholarship)
+    cats_dict['Зарплата'] = int(salary)
+    cats_dict['От физ. лиц'] = int(from_others)
+    cats_dict['Отпускные'] = int(vacation)
+    cats_dict['Прочее'] = int(rest)
+
+    return cats_dict
+
