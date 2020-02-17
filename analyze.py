@@ -24,6 +24,7 @@ def plot_scatter():
     plt.gcf().autofmt_xdate()
     # plt.savefig('./outputs/incomes_gcf.png')
     plt.show()
+    return
 
 
 def plot_per_month(incomes_list):
@@ -93,3 +94,34 @@ def count_categories(incomes_list):
 
     return cats_dict
 
+
+def transactions_per_month(incomes_list):
+    transactions = [0] * 12
+    for i in range(len(incomes_list)):
+        date = incomes_list[i]['date_to_plot'].month
+        # print(date)
+        transactions[date - 1] += 1
+    return transactions
+
+
+def transactions_per_month_from_others(incomes_list):
+    transactions_from_others = [0] * 12
+    for i in range(len(incomes_list)):
+        str_name = incomes_list[i]['name']
+        if 'SBOL перевод' in str_name or 'TINKOFF' in str_name:
+            date = incomes_list[i]['date_to_plot'].month
+            # print(date)
+            transactions_from_others[date - 1] += 1
+
+    # print(transactions_from_others)
+    return transactions_from_others
+
+
+inc = incomes()
+# transactions_per_month(inc)
+transactions_per_month_from_others(inc)
+
+
+def num_of_incomes_less_then(incomes_list, tup_less_then):
+
+    return

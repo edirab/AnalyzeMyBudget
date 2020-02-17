@@ -4,7 +4,7 @@ from datetime import datetime
 
 def spends():
 
-    file = open('card_info.html', 'r', encoding='utf-8')
+    file = open('html/card_info.html', 'r', encoding='utf-8')
 
     html = file.read()
     print(html[:500])
@@ -30,7 +30,7 @@ def spends():
 def incomes():
     my_incomes = list()
 
-    file = open('incomes.html', 'r', encoding='utf-8')
+    file = open('html/incomes.html', 'r', encoding='utf-8')
     html = file.read()
     soup_incomes = BeautifulSoup(html, 'html.parser')
 
