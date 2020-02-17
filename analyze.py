@@ -117,11 +117,27 @@ def transactions_per_month_from_others(incomes_list):
     return transactions_from_others
 
 
+def num_of_incomes_less_then(incomes_list):
+
+    from_0_to_10 = 0
+    from_10_to_20 = 0
+    from_20_to_30 = 0
+    greater_30 = 0
+
+    for i in incomes_list:
+        s = i['summ']
+        if 0 < s < 10000:
+            from_0_to_10 += 1
+        elif 10000 <= s < 20000:
+            from_10_to_20 += 1
+        elif 20000 <= s <= 30000:
+            from_20_to_30 += 1
+        else:
+            greater_30 += 1
+    return from_0_to_10, from_10_to_20, from_20_to_30, greater_30
+
+
 inc = incomes()
 # transactions_per_month(inc)
-transactions_per_month_from_others(inc)
-
-
-def num_of_incomes_less_then(incomes_list, tup_less_then):
-
-    return
+# transactions_per_month_from_others(inc)
+print(num_of_incomes_less_then(inc))
