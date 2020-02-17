@@ -1,4 +1,4 @@
-from parse import incomes
+from parse import incomes, spends
 import matplotlib
 import matplotlib.pyplot as plt
 
@@ -137,7 +137,10 @@ def num_of_incomes_less_then(incomes_list):
     return from_0_to_10, from_10_to_20, from_20_to_30, greater_30
 
 
-inc = incomes()
+# inc = incomes()
 # transactions_per_month(inc)
 # transactions_per_month_from_others(inc)
-print(num_of_incomes_less_then(inc))
+# print(num_of_incomes_less_then(inc))
+
+# spen = spends()
+# print(spen)
