@@ -1,6 +1,7 @@
 from parse import incomes, spends
-import matplotlib
 import matplotlib.pyplot as plt
+
+monthes_axis = ('Янв-20', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек')
 
 
 def plot_scatter():

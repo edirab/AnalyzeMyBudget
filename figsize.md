@@ -18,3 +18,5 @@
 
     mpl.rcParams['figure.figsize'] = (15,5)
     plt.rcParams['figure.dpi'] = 150 # default for me was 75
+    
+###### Ахтунг! Сначала plt.figure(figsize=(15, 5)), затем   plt.scatter или plt.bar, что угодно
