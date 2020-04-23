@@ -54,7 +54,7 @@ def spends():
 def incomes():
     my_incomes = list()
 
-    file = open('html/incomes.html', 'r', encoding='utf-8')
+    file = open('html chunks/incomes.html', 'r', encoding='utf-8')
     html = file.read()
     soup_incomes = BeautifulSoup(html, 'html.parser')
 
